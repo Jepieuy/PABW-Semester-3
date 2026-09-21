@@ -12,15 +12,18 @@
   Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
   komentar itu adalah daftar periksa Anda sendiri.
 -->
+  <!-- Bagian B -->
+
 <html lang="id">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Bacaan</title>
-</head>
+</head> 
+
+<!-- Bagian C -->
 
 <body>
-
     <header>
         <h1>Daftar Bacaan</h1>
 
@@ -36,24 +39,160 @@
             </ul>
         </nav>
     </header>
-<body>
 
-  <!-- TODO C.1: buat <header> di sini.
-       Isinya: satu <h1> berisi judul halaman Anda.
-       Di dalamnya juga ada <nav> berisi 3 tautan ke bagian halaman. -->
+    <section id="daftar-bacaan">
+            <h1>Daftar Manhwa &amp; Komik</h1>
+            <table>
+                <caption>
+                    Daftar manhwa dan komik yang sedang atau sudah saya baca
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Penulis</th>
+                    </tr>
+                </thead>
 
-  <!-- TODO C.2: buat <main> di sini sebagai pembungkus semua bagian isi.
-       Di dalamnya ada 2 <section>, masing-masing punya <h2> sendiri. -->
+                <tbody>
+                    <tr>
+                        <th scope="row">Solo Leveling</th>
+                        <td>Selesai</td>
+                        <td>Chugong</td>
+                    </tr>
 
-    <!-- TODO D.1: di dalam section pertama, buat tabel data Anda.
-         Wajib ada: <caption>, <thead>, <th scope="col">, dan minimal 3 baris data. -->
+                    <tr>
+                        <th scope="row">The Beginning After the End</th>
+                        <td>Sedang Dibaca</td>
+                        <td>TurtleMe</td>
+                    </tr>
 
-    <!-- TODO E.1: di dalam section kedua, buat form Anda.
-         Wajib ada: minimal 3 kolom, setiap kolom punya <label for> yang
-         cocok dengan id input-nya, dan satu atribut validasi. -->
+                    <tr>
+                        <th scope="row">Omniscient Reader</th>
+                        <td>Sedang Dibaca</td>
+                        <td>Sing Shong</td>
+                    </tr>
+                </tbody>
+            </table>
 
-  <!-- TODO C.3: buat <footer> di sini.
-       Isinya: nama Anda, NIM Anda, dan tahun. -->
+            <main>
+        <section id="daftar-bacaan">
+            <h1>Daftar Manhwa &amp; Komik</h1>
+            <table>
+                <caption>
+                    Daftar manhwa dan komik yang sedang atau sudah saya baca
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Penulis</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                    <tr>
+                        <th scope="row">Solo Leveling</th>
+                        <td>Selesai</td>
+                        <td>Chugong</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">The Beginning After the End</th>
+                        <td>Sedang Dibaca</td>
+                        <td>TurtleMe</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Omniscient Reader</th>
+                        <td>Sedang Dibaca</td>
+                        <td>Sing Shong</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img
+                    src="solev.jpeg"
+                    alt="Gambar koleksi manhwa dan komik yang saya baca"
+                    width="640"
+                    height="360"
+                    loading="lazy">
+                 <figcaption>
+                    Seorang hunter terlemah mendapatkan kemampuan untuk
+                    berkembang menjadi semakin kuat.
+                </figcaption>
+                <img
+                    src="Tebete.jpeg"
+                    alt="Gambar koleksi manhwa dan komik yang saya baca"
+                    width="640"
+                    height="360"
+                    loading="lazy">
+                <figcaption>
+                 Seorang raja bereinkarnasi ke dunia lain dan
+                menjalani kehidupan baru dengan kekuatan sihir.   
+                </figcaption>
+                <img
+                    src="orv.jpeg"
+                    alt="Gambar koleksi manhwa dan komik yang saya baca"
+                    width="640"
+                    height="360"
+                    loading="lazy">
+                <figcaption>
+                Seorang pembaca novel yang menjadi satu-satunya orang yang mengetahui akhir dari dunia.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="tambah-bacaan">
+            <h2>Tambah Manhwa &amp; Komik</h2>
+            <form action="/simpan" method="post">
+                <p>
+                    <label for="judul">Judul Manhwa atau Komik</label>
+                    <input
+                        type="text"
+                        id="judul"
+                        name="judul"
+                        required
+                    >
+                </p>
+                <p>
+                    <label for="status">Status Bacaan</label>
+                    <select
+                        id="status"
+                        name="status"
+                        required>
+                        <option value="">-- Pilih Status --</option>
+                        <option value="belum-dibaca">Belum Dibaca</option>
+                        <option value="sedang-dibaca">Sedang Dibaca</option>
+                        <option value="selesai">Selesai</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="penulis">Penulis</label>
+                    <input
+                        type="text"
+                        id="penulis"
+                        name="penulis"
+                        required>
+                </p>
+                <button type="submit">Simpan</button>
+            </form>
+        </section>
+
+        <section id="status-bacaan">
+            <h2>Status Bacaan</h2>
+            <p> Saat ini saya memiliki beberapa bacaan dengan status
+                berbeda, yaitu belum dibaca, sedang dibaca, dan selesai. </p>
+            <ul>
+                <li>Belum Dibaca: bacaan yang belum mulai saya baca.</li>
+                <li>Sedang Dibaca: bacaan yang masih saya ikuti.</li>
+                <li>Selesai: bacaan yang sudah selesai saya baca.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Javier Khiar Athallah Dirgantara Putra · 25523248 · 2026 </p>
+    </footer>
 </body>
 </html>
