@@ -1,0 +1,19 @@
+html {
+  font-size: 100%;            /* ikuti pengaturan pengguna, jangan dipatok */
+}
+ 
+body {
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: var(--text-md);
+  line-height: 1.6;           /* 1.5-1.7 nyaman untuk teks isi */
+  color: var(--color-fg);
+  background: var(--color-bg);
+  padding: var(--space-4);
+}
+ 
+h1 { font-size: var(--text-3xl); line-height: 1.15; }
+h2 { font-size: var(--text-xl);  line-height: 1.25; }
+h3 { font-size: var(--text-md); }
+ 
+/* Batasi panjang baris supaya mata mudah berpindah baris */
+main p { max-width: 60ch; }

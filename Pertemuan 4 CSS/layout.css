@@ -1,0 +1,26 @@
+header {
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+ 
+.header-baris {                /* <div class="header-baris"> di dalam header */
+  display: flex;
+  align-items: center;          /* sumbu silang: rata tengah */
+  justify-content: space-between; /* sumbu utama: judul kiri, menu kanan */
+  gap: var(--space-4);
+  flex-wrap: wrap;              /* turun baris di layar sempit, jangan meluber */
+}
+ 
+nav ul {
+  display: flex;
+  gap: var(--space-4);
+  list-style: none;             /* daftar nav tanpa butir */
+  padding: 0;
+}
+ 
+nav a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+ 
+nav a:hover { text-decoration: underline; }
