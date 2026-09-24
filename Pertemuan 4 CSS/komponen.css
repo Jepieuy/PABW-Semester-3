@@ -1,0 +1,95 @@
+/* ---------- Formulir ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);          /* jarak antar kolom isian */
+  max-width: 30rem;
+}
+
+.form-kolom {                   /* sebelumnya tanpa titik -> tidak pernah terpakai */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);          /* jarak label ke isian, seragam */
+}
+
+label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+input, select, textarea {
+  font: inherit;                /* kolom isian ikut ukuran huruf halaman */
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+input:user-invalid,
+select:user-invalid {
+  border-color: var(--color-danger);
+}
+
+button {
+  font: inherit;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-on-primary);  /* sebelumnya surface: kontras hanya 3,8:1 */
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover { filter: brightness(1.15); }
+
+/* Garis fokus papan ketik: wajib terlihat */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.tabel-gulung { overflow-x: auto; }   /* tabel menggulung di layar sempit, halaman tidak ikut melebar */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  padding-block: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+th, td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+}
+
+thead th { background: var(--color-surface); }
+
+.kartu h3 { margin-block: 0 var(--space-2); }
+
+.kartu figure {
+  margin: var(--space-3) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.kartu img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.lencana {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+}

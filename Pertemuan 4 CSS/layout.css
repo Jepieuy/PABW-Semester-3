@@ -24,3 +24,33 @@ nav a {
 }
  
 nav a:hover { text-decoration: underline; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);      /* jarak antar bagian, tanpa margin */
+  padding-block: var(--space-6);
+}
+ 
+.katalog {
+  display: flex;
+  flex-wrap: wrap;              /* kunci responsif: kartu turun sendiri */
+  gap: var(--space-4);
+}
+ 
+.kartu {
+  flex: 1 1 16rem;              /* tumbuh, menyusut, lebar dasar 16rem */
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: var(--card-pad);
+}
+ 
+footer {
+  margin-top: var(--space-6);
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-fg);       /* hindari abu pucat yang gagal kontras */
+  font-size: var(--text-sm);
+}

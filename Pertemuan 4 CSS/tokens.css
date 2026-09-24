@@ -1,34 +1,37 @@
+/* LAPIS 1 — primitif: nilai mentah, tanpa makna peran */
 :root {
   --grey-822:  #828282;
   --blue-808:  #808588;
   --black-00:  #000000;
   --white-FFF: #FFFFFF;
- 
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
- 
-  --radius-md: 0.5rem;
-  --shadow-1:  0 1px 3px rgba(0, 0, 0, .10);
- 
-  --text-sm:  0.875rem;
-  --text-md:  1rem;
-  --text-xl:  1.5rem;
-  --text-3xl: 2.25rem;
+
+  --space-1: 0.25rem;   /* 4px  : jarak paling rapat, di dalam komponen */
+  --space-2: 0.5rem;    /* 8px  : label ke isian */
+  --space-3: 0.75rem;   /* 12px : jarak di dalam kartu/sel */
+  --space-4: 1rem;      /* 16px : jarak standar antar elemen */
+  --space-6: 1.5rem;    /* 24px : jarak antar bagian halaman */
+
+  --radius-md:   0.5rem;
+  --radius-full: 999px;                        /* bentuk pil / lencana */
+  --shadow-1:    0 1px 3px rgba(0, 0, 0, .45); /* pekat sedikit karena tema gelap */
+
+  --text-sm:  0.875rem;  /* 14px */
+  --text-md:  1rem;      /* 16px */
+  --text-xl:  1.5rem;    /* 24px */
+  --text-3xl: 2.25rem;   /* 36px */
 }
- 
+
 /* LAPIS 2 — semantik: peran. Isinya mengacu ke lapis 1. */
 :root {
-  --color-bg:       var(--black-00);
-  --color-fg:       var(--white-FFF);
-  --color-surface:  #292929;
-  --color-border:   #D1D5DB;
-  --color-primary:  var(--grey-822);
-  --color-danger:   #B00020;
-  --color-focus:    var(--grey-808);
- 
-  --card-pad:       var(--space-4);
-  --section-gap:    var(--space-6);
+  --color-bg:        var(--black-00);
+  --color-fg:        var(--white-FFF);
+  --color-surface:   #292929;
+  --color-border:    #D1D5DB;
+  --color-primary:   var(--grey-822);
+  --color-on-primary: var(--black-00);   /* teks di atas tombol primary (kontras 5,4:1) */
+  --color-danger:    #B00020;
+  --color-focus:     var(--blue-808);    /* sebelumnya var(--grey-808) -> tidak ada */
+
+  --card-pad:    var(--space-4);
+  --section-gap: var(--space-6);
 }
