@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+  <!-- Bagian B -->
+
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Bacaan</title>
+</head> 
+<!--Bagian B-->
+
+
+<!-- Bagian C -->
+
+<body>
+    <header>
+        <h1>Daftar Bacaan</h1>
+
+        <p>
+            Daftar Manhwa dan komik, beserta sinopsis dan penulisnya
+        </p>
+
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="#daftar-bacaan">Daftar Manhwa &amp; Komik</a></li>
+                <li><a href="#tambah-bacaan">Tambah Manhwa &amp; Komik</a></li>
+                <li><a href="#status-bacaan">Status Bacaan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="daftar-bacaan">
+            <h1>Daftar Manhwa &amp; Komik</h1>
+            <table>
+                <caption>
+                    Daftar manhwa dan komik yang sedang atau sudah saya baca
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Penulis</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Solo Leveling</th>
+                        <td>Selesai</td>
+                        <td>Chugong</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">The Beginning After the End</th>
+                        <td>Sedang Dibaca</td>
+                        <td>TurtleMe</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Omniscient Reader</th>
+                        <td>Sedang Dibaca</td>
+                        <td>Sing Shong</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <main>
+        <section id="daftar-bacaan">
+            <h1>Daftar Manhwa &amp; Komik</h1>
+          <!-- Bagian C-->
+
+            <!-- bagian D-->
+            <table>
+                <caption>
+                    Daftar manhwa dan komik yang sedang atau sudah saya baca
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Penulis</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">Solo Leveling</th>
+                        <td>Selesai</td>
+                        <td>Chugong</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">The Beginning After the End</th>
+                        <td>Sedang Dibaca</td>
+                        <td>TurtleMe</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Omniscient Reader</th>
+                        <td>Sedang Dibaca</td>
+                        <td>Sing Shong</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <figure>
+                <img
+                    src="solev.jpeg"
+                    alt="Gambar koleksi manhwa dan komik yang saya baca"
+                    width="640"
+                    height="360"
+                    loading="lazy">
+                 <figcaption>
+                    Seorang hunter terlemah mendapatkan kemampuan untuk
+                    berkembang menjadi semakin kuat.
+                </figcaption>
+                <img
+                    src="Tebete.jpeg"
+                    alt="Gambar koleksi manhwa dan komik yang saya baca"
+                    width="640"
+                    height="360"
+                    loading="lazy">
+                <figcaption>
+                 Seorang raja bereinkarnasi ke dunia lain dan
+                menjalani kehidupan baru dengan kekuatan sihir.   
+                </figcaption>
+                <img
+                    src="orv.jpeg"
+                    alt="Gambar koleksi manhwa dan komik yang saya baca"
+                    width="640"
+                    height="360"
+                    loading="lazy">
+                <figcaption>
+                Seorang pembaca novel yang menjadi satu-satunya orang yang mengetahui akhir dari dunia.
+                </figcaption>
+            </figure>
+            <!-- bagian D -->
+
+            <!-- bagian E -->
+        </section>
+
+        <section id="tambah-bacaan">
+            <h2>Tambah Manhwa &amp; Komik</h2>
+            <form action="/simpan" method="post">
+                <p>
+                    <label for="judul">Judul Manhwa atau Komik</label>
+                    <input
+                        type="text"
+                        id="judul"
+                        name="judul"
+                        required
+                    >
+                </p>
+                <p>
+                    <label for="status">Status Bacaan</label>
+                    <select
+                        id="status"
+                        name="status"
+                        required>
+                        <option value="">-- Pilih Status --</option>
+                        <option value="belum-dibaca">Belum Dibaca</option>
+                        <option value="sedang-dibaca">Sedang Dibaca</option>
+                        <option value="selesai">Selesai</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="penulis">Penulis</label>
+                    <input
+                        type="text"
+                        id="penulis"
+                        name="penulis"
+                        required>
+                </p>
+                <button type="submit">Simpan</button>
+            </form>
+        </section>
+
+        <section id="status-bacaan">
+            <h2>Status Bacaan</h2>
+            <p> Saat ini saya memiliki beberapa bacaan dengan status
+                berbeda, yaitu belum dibaca, sedang dibaca, dan selesai. </p>
+            <ul>
+                <li>Belum Dibaca: bacaan yang belum mulai saya baca.</li>
+                <li>Sedang Dibaca: bacaan yang masih saya ikuti.</li>
+                <li>Selesai: bacaan yang sudah selesai saya baca.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Javier Khiar Athallah Dirgantara Putra · 25523248 · 2026 </p>
+    </footer>
+    <!-- bagian E -->
+</body>
+</html>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judul halaman Anda</title>
+ 
+  <!-- urutan ini yang benar: token -> dasar -> tata letak -> komponen -> tema -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="
