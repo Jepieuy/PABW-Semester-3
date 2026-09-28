@@ -1,0 +1,126 @@
+/* ---------- Formulir ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);          /* jarak antar kolom isian */
+  max-width: 30rem;
+}
+
+.form-kolom {                   /* sebelumnya tanpa titik -> tidak pernah terpakai */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);          /* jarak label ke isian, seragam */
+}
+
+label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+input, select, textarea {
+  font: inherit;                /* kolom isian ikut ukuran huruf halaman */
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+input:user-invalid,
+select:user-invalid {
+  border-color: var(--color-danger);
+}
+
+button {
+  font: inherit;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-on-primary);  /* sebelumnya surface: kontras hanya 3,8:1 */
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover { filter: brightness(1.15); }
+
+/* Garis fokus papan ketik: wajib terlihat */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.tabel-gulung { overflow-x: auto; }   /* tabel menggulung di layar sempit, halaman tidak ikut melebar */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  padding-block: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+th, td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+}
+
+thead th { background: var(--color-surface); }
+
+/* ---------- Galeri adaptif: jumlah kolom mengikuti lebar, tanpa media query ---------- */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-4);
+}
+
+/* ---------- Kartu: isi disusun grid/flex ---------- */
+.kartu {
+  display: grid;
+  align-content: start;            /* isi menumpuk dari atas, tinggi kartu rata */
+  gap: var(--space-3);
+  min-height: 14rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: var(--card-pad);
+}
+
+.kartu__judul { overflow-wrap: anywhere; }
+
+.kartu__isi { min-width: 0; }
+
+.kartu figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.kartu img {
+  width: 100%;
+  aspect-ratio: 3 / 4;             /* semua sampul berbentuk sama */
+  object-fit: cover;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.kartu__kaki {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.lencana {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+}
