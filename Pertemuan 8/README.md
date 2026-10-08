@@ -36,3 +36,8 @@ Bagian Penambahan Tabel,Form
  
 Kriteria selesai saya: mengubah --color-primary di satu baris
 harus mengubah warna tombol, tautan, judul, dan garis fokus.
+
+## Pertemuan 4 
+
+## Catatan penggunaan AI
+Pemahaman code javascript
