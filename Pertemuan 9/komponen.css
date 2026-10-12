@@ -27,8 +27,14 @@ input, select, textarea {
 }
 
 input:user-invalid,
-select:user-invalid {
-  border-color: var(--color-danger);
+select:user-invalid,
+[aria-invalid="true"] {
+  border-color: var(--color-danger-text);
+}
+
+.form-galat {
+  color: var(--color-danger-text);
+  font-size: var(--text-sm);
 }
 
 button {
@@ -120,4 +126,28 @@ thead th { background: var(--color-surface); }
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   font-size: var(--text-sm);
+}
+
+/* ---------- Tombol filter ---------- */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter button {
+  background: transparent;
+  color: var(--color-fg);
+  border-color: var(--color-border);
+}
+
+.filter button.aktif {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: transparent;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
 }

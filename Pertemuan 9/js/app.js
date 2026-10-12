@@ -9,9 +9,30 @@ const profil = {
 };
 
 const daftarBacaan = [
-  { judul: "Solo Leveling", penulis: "Chugong", status: "selesai", selesai: true },
-  { judul: "The Beginning After the End", penulis: "TurtleMe", status: "sedang-dibaca", selesai: false },
-  { judul: "Omniscient Reader", penulis: "Sing Shong", status: "sedang-dibaca", selesai: false },
+  {
+    judul: "Solo Leveling",
+    penulis: "Chugong",
+    status: "selesai",
+    selesai: true,
+    gambar: "solev.jpeg",
+    sinopsis: "Seorang hunter terlemah mendapatkan kemampuan untuk berkembang menjadi semakin kuat.",
+  },
+  {
+    judul: "The Beginning After the End",
+    penulis: "TurtleMe",
+    status: "sedang-dibaca",
+    selesai: false,
+    gambar: "Tebete.jpeg",
+    sinopsis: "Seorang raja bereinkarnasi ke dunia lain dan menjalani kehidupan baru dengan kekuatan sihir.",
+  },
+  {
+    judul: "Omniscient Reader",
+    penulis: "Sing Shong",
+    status: "belum-dibaca",
+    selesai: false,
+    gambar: "orv.jpeg",
+    sinopsis: "Seorang pembaca novel yang menjadi satu-satunya orang yang mengetahui akhir dari dunia.",
+  },
 ];
 
 const jumlahBacaan = daftarBacaan.length;
@@ -77,3 +98,6 @@ console.log("saring semua / selesai:", semuaBacaan.length, hanyaSelesai.length);
 console.log("data asli:", daftarBacaan.map((b) => b.judul));
 console.log("penulis pertama:", penulisPertama);
 console.log("ubahKeAngka('10') + 1 =", ubahKeAngka("10") + 1);
+
+// Dipakai oleh js/dom.js (setiap modul punya lingkupnya sendiri, jadi harus diekspor)
+export { daftarBacaan, saring };

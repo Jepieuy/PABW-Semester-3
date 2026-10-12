@@ -30,6 +30,7 @@
   --color-primary:   var(--grey-822);
   --color-on-primary: var(--black-00);   /* teks di atas tombol primary (kontras 5,4:1) */
   --color-danger:    #B00020;
+  --color-danger-text: #FF9AA8;          /* teks pesan galat, kontras tinggi di latar gelap */
   --color-focus:     var(--blue-808);    /* sebelumnya var(--grey-808) -> tidak ada */
 
   --card-pad:    var(--space-4);
