@@ -1,5 +1,5 @@
-// Pertemuan 9: memasang data dari app.js ke halaman dan menanggapi pengguna.
-import { daftarBacaan, saring } from "./app.js";
+// js/dom.js: semua sentuhan ke halaman ada di sini (Pertemuan 9, diperluas di Pertemuan 10).
+// Data tidak ditulis di sini, tetapi datang lewat aturSumber() dan render().
 
 // ---------- Lembar A: memilih elemen ----------
 const wadah = document.querySelector("#daftar");
@@ -14,6 +14,8 @@ const galatJudul = document.querySelector("#galat-judul");
 const galatStatus = document.querySelector("#galat-status");
 const galatPenulis = document.querySelector("#galat-penulis");
 const tombolSimpan = document.querySelector("#tombol-simpan");
+const pesanMuat = document.querySelector("#muat");
+const pesanGalat = document.querySelector("#pesan-galat");
 
 const labelStatus = {
   selesai: "Selesai",
@@ -22,6 +24,11 @@ const labelStatus = {
 };
 
 let filterAktif = "semua";
+let sumber = []; // seluruh data hasil jaringan, dipakai penyaring dan tabel
+
+// Penyaring kategori (Pertemuan 9). Di Pertemuan 11 dipindah ke data.js.
+export const saring = (daftar, status) =>
+  status === "semua" ? daftar : daftar.filter((bacaan) => bacaan.status === status);
 
 // ---------- Lembar B: menyusun elemen dari data ----------
 function buatKartu(bacaan) {
@@ -59,12 +66,15 @@ function buatKartu(bacaan) {
   return kartu;
 }
 
-// ---------- Lembar D.1: satu fungsi render untuk daftar ----------
-function render(daftar) {
+// ---------- Satu fungsi render untuk daftar (kontrak untuk Pertemuan 11) ----------
+export function render(daftar) {
   wadah.textContent = ""; // 1. kosongkan lebih dulu
+  pesanGalat.hidden = true;
 
   if (daftar.length === 0) {
-    // 2. keadaan kosong
+    // 2. keadaan kosong, pesannya menjelaskan keadaan yang sedang terjadi
+    kosong.textContent =
+      sumber.length === 0 ? "Belum ada bacaan." : "Tidak ada bacaan pada kategori ini.";
     kosong.hidden = false;
     return;
   }
@@ -73,6 +83,28 @@ function render(daftar) {
   const fragmen = document.createDocumentFragment(); // 3. isi ulang, digambar sekali
   daftar.forEach((bacaan) => fragmen.append(buatKartu(bacaan)));
   wadah.append(fragmen);
+}
+
+// ---------- Keadaan antarmuka: memuat dan gagal ----------
+export function aturMemuat(sedangMemuat) {
+  pesanMuat.hidden = !sedangMemuat;
+  if (sedangMemuat) {
+    pesanGalat.hidden = true;
+    kosong.hidden = true;
+  }
+}
+
+export function tampilkanGalat(pesan) {
+  wadah.textContent = "";
+  kosong.hidden = true;
+  pesanGalat.textContent = pesan; // textContent, bukan innerHTML
+  pesanGalat.hidden = false;
+}
+
+// Dipanggil app.js setelah data tiba: menyimpan larik untuk penyaring dan mengisi tabel
+export function aturSumber(data) {
+  sumber = data;
+  renderTabel(sumber);
 }
 
 // Satu fungsi render untuk tabel ringkasan (selalu memuat seluruh data)
@@ -106,10 +138,11 @@ function tandaiTombolAktif(tombolAktif) {
 barisFilter.addEventListener("click", (event) => {
   const tombol = event.target.closest("button");
   if (!tombol) return; // klik di luar tombol, abaikan
+  if (sumber.length === 0) return; // belum ada data (masih memuat atau gagal)
 
   filterAktif = tombol.dataset.kategori;
   tandaiTombolAktif(tombol);
-  render(saring(daftarBacaan, filterAktif));
+  render(saring(sumber, filterAktif));
 });
 
 // ---------- Lembar D.2: validasi form per kolom ----------
@@ -182,22 +215,22 @@ formTambah.addEventListener("submit", (event) => {
     return;
   }
 
-  daftarBacaan.push({
+  const bacaanBaru = {
+    id: Math.max(0, ...sumber.map((bacaan) => bacaan.id)) + 1,
     judul: inputJudul.value.trim(),
     penulis: inputPenulis.value.trim(),
     status: inputStatus.value,
     selesai: inputStatus.value === "selesai",
-  });
+  };
+  // objek menjadi teks: arah JSON.stringify, bentuk yang siap dikirim ke peladen
+  console.log("badan yang akan dikirim:", JSON.stringify(bacaanBaru));
+  sumber.push(bacaanBaru);
 
   formTambah.reset();
   bersihkanGalat();
   sudahDicoba = false;
   perbaruiTombol();
 
-  render(saring(daftarBacaan, filterAktif));
-  renderTabel(daftarBacaan);
+  render(saring(sumber, filterAktif));
+  renderTabel(sumber);
 });
-
-// ---------- Tampilan awal ----------
-render(daftarBacaan);
-renderTabel(daftarBacaan);
