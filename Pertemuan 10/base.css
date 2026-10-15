@@ -1,0 +1,22 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 100%;            
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: var(--text-md);
+  line-height: 1.6;          
+  color: var(--color-fg);
+  background: var(--color-bg);
+}
+
+h1, h2, h3, p, ul, figure { margin: 0; }
+
+h1 { font-size: var(--text-3xl); line-height: 1.15; }
+h2 { font-size: var(--text-xl);  line-height: 1.25; }
+h3 { font-size: var(--text-md); }
+
+main p { max-width: 60ch; }

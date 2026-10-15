@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- Pertemuan 9: DOM, event, dan interaktivitas -->
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Bacaan</title>
+
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
+  <link rel="stylesheet" href="responsif.css">
+</head>
+
+<body>
+  <div class="page">
+  <header>
+    <div class="navbar">
+      <div class="navbar__judul">
+        <h1>Daftar Bacaan</h1>
+        <p>Daftar manhwa dan komik, beserta sinopsis dan penulisnya</p>
+      </div>
+      <nav aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#daftar-bacaan">Daftar Manhwa dan Komik</a></li>
+          <li><a href="#tambah-bacaan">Tambah Manhwa dan Komik</a></li>
+          <li><a href="#status-bacaan">Status Bacaan</a></li>
+        </ul>
+      </nav>
+
+      <input type="checkbox" id="tema" class="pengalih-tema">
+      <label for="tema" class="tombol-tema">Ganti tema</label>
+    </div>
+  </header>
+
+  <main class="isi">
+    <aside class="sisi" aria-label="Keterangan status">
+      <section id="status-bacaan">
+        <h2>Status Bacaan</h2>
+        <p>Saat ini saya memiliki beberapa bacaan dengan status berbeda, yaitu belum dibaca, sedang dibaca, dan selesai.</p>
+        <ul>
+          <li>Belum Dibaca: bacaan yang belum mulai saya baca.</li>
+          <li>Sedang Dibaca: bacaan yang masih saya ikuti.</li>
+          <li>Selesai: bacaan yang sudah selesai saya baca.</li>
+        </ul>
+      </section>
+    </aside>
+
+    <ul id="tambah-bacaan"></ul>                  <!-- wadah kartu <li> -->
+    <p id="status-bacaan" hidden>Belum ada data.</p>
+    <!-- baru hari ini -->
+    <p id="daftar-bacaan" hidden>Memuat data...</p>
+
+
+    <div class="utama">
+    <section id="daftar-bacaan">
+      <h2>Daftar Manhwa dan Komik</h2>
+      <div id="filter" class="filter" role="group" aria-label="Saring bacaan berdasarkan status">
+        <button type="button" class="aktif" data-kategori="semua" aria-pressed="true">Semua</button>
+        <button type="button" data-kategori="selesai" aria-pressed="false">Selesai</button>
+        <button type="button" data-kategori="sedang-dibaca" aria-pressed="false">Sedang Dibaca</button>
+        <button type="button" data-kategori="belum-dibaca" aria-pressed="false">Belum Dibaca</button>
+      </div>
+      <p id="pesan-kosong" hidden>Tidak ada bacaan pada kategori ini.</p>
+
+      <!-- Kartu dibuat oleh js/dom.js dari data di js/app.js -->
+      <div class="galeri" id="daftar"></div>
+
+
+      <!-- Bagian D: tabel -->
+      <div class="tabel-gulung">
+        <table>
+          <caption>Daftar manhwa dan komik yang sedang atau sudah saya baca</caption>
+          <thead>
+            <tr>
+              <th scope="col">Judul</th>
+              <th scope="col">Status</th>
+              <th scope="col">Penulis</th>
+            </tr>
+          </thead>
+          <tbody id="isi-tabel"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Bagian E -->
+    <section id="tambah-bacaan">
+      <h2>Tambah Manhwa dan Komik</h2>
+      <form id="form-tambah" action="/simpan" method="post" novalidate>
+        <div class="form-kolom">
+          <label for="judul">Judul Manhwa atau Komik</label>
+          <input type="text" id="judul" name="judul" required aria-describedby="galat-judul">
+          <p class="form-galat" id="galat-judul" hidden></p>
+        </div>
+
+        <div class="form-kolom">
+          <label for="status">Status Bacaan</label>
+          <select id="status" name="status" required aria-describedby="galat-status">
+            <option value="">-- Pilih Status --</option>
+            <option value="belum-dibaca">Belum Dibaca</option>
+            <option value="sedang-dibaca">Sedang Dibaca</option>
+            <option value="selesai">Selesai</option>
+          </select>
+          <p class="form-galat" id="galat-status" hidden></p>
+        </div>
+
+        <div class="form-kolom">
+          <label for="penulis">Penulis</label>
+          <input type="text" id="penulis" name="penulis" required aria-describedby="galat-penulis">
+          <p class="form-galat" id="galat-penulis" hidden></p>
+        </div>
+
+        <button type="submit" id="tombol-simpan">Simpan</button>
+      </form>
+    </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Javier Khiar Athallah Dirgantara Putra · 25523248 · 2026</p>
+  </footer>
+  </div>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/dom.js"></script>
+  <script type="module" src="js/api.js"></script>
+
+</body>
+</html>

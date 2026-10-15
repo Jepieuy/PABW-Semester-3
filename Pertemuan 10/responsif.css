@@ -1,0 +1,40 @@
+/* ===== Pertemuan 6: responsif mobile-first =====
+   Urutan: gaya dasar (layar sempit, tanpa syarat) -> tablet -> desktop.
+   Semua titik henti memakai min-width dan rem. */
+
+/* ---------- Gaya dasar: berlaku di semua lebar ---------- */
+.galeri {
+  grid-template-columns: 1fr;          /* satu kolom di layar sempit */
+}
+
+/* gambar tidak melebihi wadahnya */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* tabel lebar menggulir sendiri, halaman tidak ikut melebar */
+.tabel-gulung {
+  overflow-x: auto;
+}
+
+/* teks mengikuti ukuran huruf pengguna */
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Titik henti 1 (tablet): galeri dua kolom ---------- */
+@media (min-width: 48rem) {
+  .galeri { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Titik henti 2 (desktop): sidebar bersanding, galeri tiga kolom ---------- */
+@media (min-width: 60rem) {
+  .isi {
+    grid-template-columns: 16rem minmax(0, 1fr);
+    grid-template-areas: "sisi utama";
+    align-items: start;
+  }
+  .galeri { grid-template-columns: repeat(3, 1fr); }
+}
